@@ -48,7 +48,7 @@ class QuestionModelTests(TestCase):
 
 
 class QuestionIndexViewTests(TestCase):
-    def text_no_question(self):
+    def test_no_question(self):
         """
         If no questions exists, an appropriate message is displayed.
         """
@@ -56,7 +56,7 @@ class QuestionIndexViewTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'No polls are available.')
         self.assertQuerysetEqual(
-            response.context['quesiton_list'], []
+            response.context['question_list'], []
         )
 
     def test_past_question(self):
