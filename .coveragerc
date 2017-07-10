@@ -1,0 +1,12 @@
+[run]
+omit = 
+    */migrations/*,
+    */tests.py
+    manage.py
+    myblog/wsgi.py
+
+source =
+    polls
+
+[report]
+show_missing = True
