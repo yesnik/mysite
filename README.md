@@ -1,6 +1,8 @@
 Опросы на Django
 ======
 
+[![Build Status](https://travis-ci.org/yesnik/mysite.svg?branch=master)](https://travis-ci.org/yesnik/mysite)
+
 Учебное приложение **polls** с официального сайта фреймворка [Django](https://djangoproject.com).
 Настоятельно рекомендуется использовать для разработки не Windows, а Linux (к примеру, Ubuntu).
 
