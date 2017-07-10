@@ -21,6 +21,13 @@ class IndexView(generic.ListView):
 
 class DetailView(generic.DetailView):
     model = Question
+    def get_queryset(self):
+        """
+        Excludes questions from the future.
+        """
+        return Question.objects.filter(
+            pub_date__lte=timezone.now()
+        )
 
 
 class ResultsView(generic.DetailView):
