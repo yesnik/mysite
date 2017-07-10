@@ -20,7 +20,7 @@ $ python manage.py migrate
 ```
 * Создаем суперпользователя, чтобы можно было войти в админку
 ```bash
-python manage.py createsuperuser
+$ python manage.py createsuperuser
 ```
 * Запускаем сервер разработки
 ```bash
@@ -28,4 +28,11 @@ $ python manage.py runserver
 ```
 * Переходим на сайт: http://127.0.0.1:8000/
 
-* Реквизиты для [админки](http://127.0.0.1:8000/admin/): логин: *admin*, пароль: *admin*
+* Админка: http://127.0.0.1:8000/admin/ . Для входа используйте реквизиты созданного суперпользователя.
+
+## Разработка
+
+* Запустить тесты
+```bash
+$ python manage.py test
+```
