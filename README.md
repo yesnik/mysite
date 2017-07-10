@@ -9,9 +9,18 @@
 ```bash
 $ git clone git@github.com:yesnik/mysite.git
 ```
-* Запускаем миграции базы данных
+* Переходим в папку с проектом и устанавливаем зависимости
+```bash
+$ cd mysite
+$ pip install -r requirements.txt
+```
+* Применяем миграции
 ```bash
 $ python manage.py migrate
+```
+* Создаем суперпользователя, чтобы можно было войти в админку
+```bash
+python manage.py createsuperuser
 ```
 * Запускаем сервер разработки
 ```bash
