@@ -4,7 +4,7 @@ from django.utils import timezone
 from django.urls import reverse
 from django.test import TestCase
 
-from .models import Question
+from .models import Question, Choice
 
 
 def create_question_with_answer(question_text, days):
@@ -47,6 +47,18 @@ class QuestionModelTests(TestCase):
         time = timezone.now() - datetime.timedelta(hours=23, minutes=59, seconds=59)
         recent_quesiton = Question(pub_date=time)
         self.assertIs(recent_quesiton.was_published_recently(), True)
+
+
+class ChoiceModelTests(TestCase):
+    def test_choice_str(self):
+        """
+        __str__() returns choice_text of choice
+        """
+        question = Question.objects.create(
+            question_text="Question 1", pub_date=timezone.now()
+        )
+        choice = Choice.objects.create(choice_text='Choice 1', votes=0, question_id=question.id)
+        self.assertEqual(str(choice), choice.choice_text)
 
 
 class QuestionIndexViewTests(TestCase):
